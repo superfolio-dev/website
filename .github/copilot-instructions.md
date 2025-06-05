@@ -8,9 +8,11 @@ SuperFolio é uma plataforma SaaS que permite desenvolvedores criarem portfólio
 
 - **Frontend**: React 19.1.0 + TypeScript
 - **Build Tool**: Vite 6.3.5
+- **Minification**: Terser
 - **Styling**: CSS (planejado: Tailwind CSS ou Styled Components)
 - **Linting**: ESLint com configurações para React/TypeScript
-- **Deployment**: Planejado para sites estáticos (Vercel, Netlify)
+- **Deployment**: GitHub Pages com GitHub Actions
+- **Domain**: superfolio.dev.br
 
 ## Arquitetura do Sistema
 
@@ -243,11 +245,20 @@ class ApiService {
 ### Build Process
 
 ```bash
+npm run dev       # Desenvolvimento local
 npm run build     # Build de produção
 npm run preview   # Preview local do build
 npm run lint      # Linting
 npm run test      # Testes
+npm run deploy    # Deploy manual (se necessário)
 ```
+
+### GitHub Actions
+
+- **Workflow**: `.github/workflows/deploy.yml`
+- **Trigger**: Push para branch `main`
+- **Deploy**: Automático para GitHub Pages
+- **Domain**: superfolio.dev.br via CNAME
 
 ### Environment Variables
 
@@ -339,4 +350,5 @@ VITE_APP_ENV=         # development | staging | production
 
 ---
 
-_Esta documentação deve ser atualizada conforme o projeto evolui. Versão atual: 1.0_
+_Esta documentação deve ser atualizada conforme o projeto evolui. Versão atual: 1.1_
+_Última atualização: Configuração de GitHub Pages e deploy automático_
