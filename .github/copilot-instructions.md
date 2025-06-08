@@ -1,76 +1,76 @@
-# SuperFolio - Instruções para AI Agent
+# SuperFolio - AI Agent Instructions
 
-## Visão Geral do Projeto
+## Project Overview
 
-SuperFolio é uma plataforma SaaS que permite desenvolvedores criarem portfólios personalizados através de templates predefinidos. O usuário preenche informações básicas e o sistema gera um site estático personalizado.
+SuperFolio is a SaaS platform that allows developers to create personalized portfolios through predefined templates. Users fill in basic information and the system generates a customized static website.
 
-## Stack Tecnológica
+## Technology Stack
 
 - **Frontend**: React 19.1.0 + TypeScript
 - **Build Tool**: Vite 6.3.5
 - **Minification**: Terser
-- **Styling**: CSS (planejado: Tailwind CSS ou Styled Components)
-- **Linting**: ESLint com configurações para React/TypeScript
-- **Deployment**: GitHub Pages com GitHub Actions
+- **Styling**: CSS (planned: Tailwind CSS or Styled Components)
+- **Linting**: ESLint with React/TypeScript configurations
+- **Deployment**: GitHub Pages with GitHub Actions
 - **Domain**: superfolio.dev.br
 
-## Arquitetura do Sistema
+## System Architecture
 
-### Estrutura Atual
+### Current Structure
 
 ```
 superfolio/
 ├── src/
-│   ├── components/          # Componentes reutilizáveis
-│   ├── templates/           # Templates de portfólio
-│   ├── pages/               # Páginas da aplicação
+│   ├── components/          # Reusable components
+│   ├── templates/           # Portfolio templates
+│   ├── pages/               # Application pages
 │   ├── hooks/               # Custom hooks
-│   ├── utils/               # Funções utilitárias
-│   ├── types/               # Definições TypeScript
-│   ├── services/            # Serviços de API
-│   └── assets/              # Recursos estáticos
-├── public/                  # Arquivos públicos
-└── dist/                    # Build de produção
+│   ├── utils/               # Utility functions
+│   ├── types/               # TypeScript definitions
+│   ├── services/            # API services
+│   └── assets/              # Static resources
+├── public/                  # Public files
+└── dist/                    # Production build
 ```
 
-### Fluxo Principal
+### Main Flow
 
-1. **Seleção de Template**: Usuário escolhe um template
-2. **Formulário de Dados**: Preenchimento de informações pessoais/profissionais
-3. **Preview**: Visualização em tempo real
-4. **Geração**: Criação do site estático
-5. **Deploy**: Hospedagem automática
+1. **Template Selection**: User chooses a template
+2. **Data Form**: Fill in personal/professional information
+3. **Preview**: Real-time visualization
+4. **Generation**: Static site creation
+5. **Deploy**: Automatic hosting
 
-## Funcionalidades Core
+## Core Features
 
-### 1. Sistema de Templates
+### 1. Template System
 
-- Templates responsivos e modernos
-- Categorias: Desenvolvedor, Designer, Freelancer, etc.
-- Customização de cores, tipografia e layout
-- Suporte a diferentes seções (sobre, projetos, contato, etc.)
+- Responsive and modern templates
+- Categories: Developer, Designer, Freelancer, etc.
+- Customization of colors, typography and layout
+- Support for different sections (about, projects, contact, etc.)
 
-### 2. Editor de Dados
+### 2. Data Editor
 
-- Formulário estruturado para coleta de informações
-- Upload de imagens (foto de perfil, projetos)
-- Integração com redes sociais
-- Validação de dados em tempo real
+- Structured form for information collection
+- Image upload (profile photo, projects)
+- Social media integration
+- Real-time data validation
 
-### 3. Preview em Tempo Real
+### 3. Real-time Preview
 
-- Visualização instantânea das mudanças
-- Responsividade em diferentes dispositivos
-- Modo escuro/claro
+- Instant visualization of changes
+- Responsiveness on different devices
+- Dark/light mode
 
-### 4. Geração de Site Estático
+### 4. Static Site Generation
 
-- Export para HTML/CSS/JS otimizado
-- SEO otimizado
-- Performance otimizada
+- Export to optimized HTML/CSS/JS
+- SEO optimized
+- Performance optimized
 - PWA ready
 
-## Estrutura de Dados
+## Data Structure
 
 ### UserProfile
 
@@ -115,19 +115,19 @@ interface Template {
 }
 ```
 
-## Convenções de Desenvolvimento
+## Development Conventions
 
-### Nomenclatura
+### Naming
 
-- **Componentes**: PascalCase (ex: `TemplateCard`)
-- **Hooks**: camelCase com prefixo `use` (ex: `useTemplateData`)
-- **Utilitários**: camelCase (ex: `formatDate`)
-- **Constantes**: SCREAMING_SNAKE_CASE (ex: `API_ENDPOINTS`)
+- **Components**: PascalCase (e.g., `TemplateCard`)
+- **Hooks**: camelCase with `use` prefix (e.g., `useTemplateData`)
+- **Utilities**: camelCase (e.g., `formatDate`)
+- **Constants**: SCREAMING_SNAKE_CASE (e.g., `API_ENDPOINTS`)
 
-### Estrutura de Componentes
+### Component Structure
 
 ```typescript
-// Exemplo de estrutura padrão
+// Standard structure example
 interface ComponentNameProps {
   // Props interface
 }
@@ -135,9 +135,9 @@ interface ComponentNameProps {
 export const ComponentName: React.FC<ComponentNameProps> = ({
   // Destructuring props
 }) => {
-  // Hooks e state
+  // Hooks and state
 
-  // Handlers e funções
+  // Handlers and functions
 
   // Render
   return (
@@ -146,61 +146,61 @@ export const ComponentName: React.FC<ComponentNameProps> = ({
 };
 ```
 
-### Organização de Arquivos
+### File Organization
 
-- Um componente por arquivo
-- Index.ts para exports centralizados
-- Co-location de testes e estilos
-- Separação clara entre lógica e apresentação
+- One component per file
+- Index.ts for centralized exports
+- Co-location of tests and styles
+- Clear separation between logic and presentation
 
-## Guidelines de UI/UX
+## UI/UX Guidelines
 
 ### Design System
 
-- **Cores**: Paleta moderna e acessível
-- **Tipografia**: Hierarquia clara e legível
-- **Espaçamento**: Sistema consistente (8px grid)
-- **Componentes**: Biblioteca reutilizável
+- **Colors**: Modern and accessible palette
+- **Typography**: Clear and readable hierarchy
+- **Spacing**: Consistent system (8px grid)
+- **Components**: Reusable library
 
-### Responsividade
+### Responsiveness
 
 - Mobile-first approach
 - Breakpoints: 640px, 768px, 1024px, 1280px
-- Touch-friendly (mínimo 44px para elementos clicáveis)
+- Touch-friendly (minimum 44px for clickable elements)
 
-### Acessibilidade
+### Accessibility
 
-- Contraste mínimo WCAG AA
-- Navegação por teclado
-- ARIA labels apropriados
-- Semântica HTML correta
+- WCAG AA minimum contrast
+- Keyboard navigation
+- Appropriate ARIA labels
+- Correct HTML semantics
 
-## Padrões de Código
+## Code Patterns
 
 ### TypeScript
 
-- Strict mode habilitado
-- Interfaces para todas as props
-- Tipos explícitos onde necessário
-- Evitar `any`, usar `unknown` quando apropriado
+- Strict mode enabled
+- Interfaces for all props
+- Explicit types where necessary
+- Avoid `any`, use `unknown` when appropriate
 
 ### React
 
-- Functional components com hooks
-- Custom hooks para lógica reutilizável
-- Memoização adequada (React.memo, useMemo, useCallback)
-- Error boundaries para captura de erros
+- Functional components with hooks
+- Custom hooks for reusable logic
+- Proper memoization (React.memo, useMemo, useCallback)
+- Error boundaries for error handling
 
 ### Performance
 
-- Code splitting por rotas
-- Lazy loading de componentes pesados
-- Otimização de imagens
-- Bundle analysis regular
+- Code splitting by routes
+- Lazy loading of heavy components
+- Image optimization
+- Regular bundle analysis
 
-## Integração com APIs
+## API Integration
 
-### Estrutura de Serviços
+### Service Structure
 
 ```typescript
 // services/api.ts
@@ -208,135 +208,142 @@ class ApiService {
   private baseURL: string
 
   async createPortfolio(data: UserProfile): Promise<Portfolio> {
-    // Implementação
+    // Implementation
   }
 
   async uploadImage(file: File): Promise<string> {
-    // Implementação
+    // Implementation
   }
 }
 ```
 
 ### Error Handling
 
-- Try-catch consistente
-- Error boundaries para UI
-- Feedback claro para usuário
-- Logging estruturado
+- Consistent try-catch
+- Error boundaries for UI
+- Clear user feedback
+- Structured logging
 
 ## Testing Strategy
 
-### Estrutura de Testes
+### Test Structure
 
-- **Unit Tests**: Funções utilitárias e hooks
-- **Component Tests**: Renderização e interações
-- **Integration Tests**: Fluxos completos
-- **E2E Tests**: Cenários críticos
+- **Unit Tests**: Utility functions and hooks
+- **Component Tests**: Rendering and interactions
+- **Integration Tests**: Complete flows
+- **E2E Tests**: Critical scenarios
 
 ### Tools
 
-- Jest para testes unitários
-- React Testing Library para componentes
-- Cypress para E2E
-- MSW para mock de APIs
+- Jest for unit tests
+- React Testing Library for components
+- Cypress for E2E
+- MSW for API mocking
 
 ## Deployment
+
+✅ **Deployment is already configured and working**
+
+### Automatic Build & Deploy
+
+- **Trigger**: Every push to `main` branch
+- **Platform**: GitHub Pages with GitHub Actions
+- **Custom Domain**: superfolio.dev.br (DNS configured)
+- **HTTPS**: Enabled automatically
 
 ### Build Process
 
 ```bash
-npm run dev       # Desenvolvimento local
-npm run build     # Build de produção
-npm run preview   # Preview local do build
+npm run dev       # Local development
+npm run build     # Production build
+npm run preview   # Preview local build
 npm run lint      # Linting
-npm run test      # Testes
-npm run deploy    # Deploy manual (se necessário)
+npm run test      # Tests
 ```
 
-### GitHub Actions
+### GitHub Actions Workflow
 
-- **Workflow**: `.github/workflows/deploy.yml`
-- **Trigger**: Push para branch `main`
-- **Deploy**: Automático para GitHub Pages
-- **Domain**: superfolio.dev.br via CNAME
+- **Location**: `.github/workflows/deploy.yml`
+- **Process**: Checkout → Setup Node.js → Install → Lint → Build → Deploy
+- **Status**: Monitor in GitHub Actions tab
 
 ### Environment Variables
 
 ```
-VITE_API_URL=         # URL da API
-VITE_UPLOAD_URL=      # URL para upload de arquivos
+VITE_API_URL=         # API URL
+VITE_UPLOAD_URL=      # File upload URL
 VITE_APP_ENV=         # development | staging | production
 ```
 
-## Próximos Passos de Desenvolvimento
+## Development Roadmap
 
-### Fase 1: Fundação
+### Phase 1: Foundation
 
-- [ ] Setup do design system
-- [ ] Criação de componentes base
-- [ ] Estrutura de roteamento
-- [ ] Sistema de tipos TypeScript
+- [ ] Design system setup
+- [ ] Base components creation
+- [ ] Routing structure
+- [ ] TypeScript types system
 
-### Fase 2: Templates
+### Phase 2: Templates
 
-- [ ] Desenvolvimento de 3-5 templates iniciais
-- [ ] Sistema de seleção de templates
-- [ ] Preview de templates
+- [ ] Development of 3-5 initial templates
+- [ ] Template selection system
+- [ ] Template preview
 
-### Fase 3: Editor
+### Phase 3: Editor
 
-- [ ] Formulário de dados estruturado
-- [ ] Upload de imagens
-- [ ] Preview em tempo real
-- [ ] Validação de dados
+- [ ] Structured data form
+- [ ] Image upload
+- [ ] Real-time preview
+- [ ] Data validation
 
-### Fase 4: Geração
+### Phase 4: Generation
 
-- [ ] Engine de geração de sites estáticos
-- [ ] Otimização de performance
-- [ ] SEO automático
+- [ ] Static site generation engine
+- [ ] Performance optimization
+- [ ] Automatic SEO
 
-### Fase 5: Deploy
+### Phase 5: Deploy
 
-- [ ] Integração com serviços de hosting
-- [ ] Sistema de domínios personalizados
-- [ ] Analytics básico
+- [ ] Hosting services integration
+- [ ] Custom domains system
+- [ ] Basic analytics
 
-## Instruções Específicas para AI
+## AI Agent Specific Instructions
 
-### Ao Implementar Novos Recursos
+### When Implementing New Features
 
-1. Sempre criar/atualizar tipos TypeScript primeiro
-2. Implementar testes antes do código (TDD quando apropriado)
-3. Seguir os padrões de nomenclatura estabelecidos
-4. Considerar acessibilidade e responsividade
-5. Documentar APIs e componentes complexos
+1. Always create/update TypeScript types first
+2. Implement tests before code (TDD when appropriate)
+3. Follow established naming conventions
+4. Consider accessibility and responsiveness
+5. Document complex APIs and components
 
-### Ao Fazer Mudanças
+### When Making Changes
 
-1. Verificar impacto em componentes dependentes
-2. Atualizar testes relacionados
-3. Manter consistência com design system
-4. Otimizar performance quando relevante
+1. Check impact on dependent components
+2. Update related tests
+3. Maintain consistency with design system
+4. Optimize performance when relevant
 
-### Prioridades de Qualidade
+### Quality Priorities
 
-1. **Funcionalidade**: Código deve funcionar corretamente
-2. **Manutenibilidade**: Código limpo e bem estruturado
-3. **Performance**: Otimizações sensatas
-4. **Acessibilidade**: Inclusivo por design
-5. **UX**: Experiência do usuário fluida
+1. **Functionality**: Code must work correctly
+2. **Maintainability**: Clean and well-structured code
+3. **Performance**: Sensible optimizations
+4. **Accessibility**: Inclusive by design
+5. **UX**: Smooth user experience
 
-### Debugging e Troubleshooting
+### Debugging and Troubleshooting
 
-- Usar React DevTools para análise de componentes
-- Console.log estratégico durante desenvolvimento
-- Error boundaries para captura de erros
-- Network tab para debugging de APIs
+- Use React DevTools for component analysis
+- Strategic console.log during development
+- Error boundaries for error capture
+- Network tab for API debugging
 
-## Recursos Externos
+## External Resources
 
-### Documentação
+### Documentation
 
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -350,5 +357,5 @@ VITE_APP_ENV=         # development | staging | production
 
 ---
 
-_Esta documentação deve ser atualizada conforme o projeto evolui. Versão atual: 1.1_
-_Última atualização: Configuração de GitHub Pages e deploy automático_
+_This documentation should be updated as the project evolves. Current version: 1.2_
+_Last update: Documentation translated to English and deployment status updated_
