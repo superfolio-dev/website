@@ -7,7 +7,7 @@ A SaaS platform that allows developers to create personalized portfolios through
 - **Frontend**: React 19.1.0 + TypeScript
 - **Build Tool**: Vite 6.3.5
 - **Minification**: Terser
-- **Styling**: CSS (planned: Tailwind CSS or Styled Components)
+- **Styling**: CSS Modules + Design System Variables
 - **Linting**: ESLint with React/TypeScript configurations
 - **Deployment**: GitHub Pages with GitHub Actions
 - **Domain**: superfolio.dev.br
