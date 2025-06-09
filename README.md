@@ -9,21 +9,19 @@ A SaaS platform that allows developers to create personalized portfolios through
 - **Minification**: Terser
 - **Styling**: CSS Modules + Design System Variables
 - **Linting**: ESLint with React/TypeScript configurations
-- **Deployment**: GitHub Pages with GitHub Actions
-- **Domain**: superfolio.dev.br
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22+
 - npm or yarn
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/superfolio.git
+git clone https://github.com/superfolio-dev/website.git superfolio
 
 # Navigate to project directory
 cd superfolio
@@ -61,10 +59,6 @@ superfolio/
 └── dist/                    # Production build
 ```
 
-## Deployment
-
-The project is automatically deployed to GitHub Pages when pushing to the `main` branch. The live site is available at [superfolio.dev.br](https://superfolio.dev.br).
-
 ## Contributing
 
 1. Fork the repository
@@ -72,7 +66,3 @@ The project is automatically deployed to GitHub Pages when pushing to the `main`
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
