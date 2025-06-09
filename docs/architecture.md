@@ -126,42 +126,15 @@ export const PageName = () => {
 
 ## Error Boundaries
 
-Implement error boundaries for graceful error handling:
+✅ **Error boundaries are implemented** in `src/components/ErrorBoundary/`
 
-```typescript
-// components/ErrorBoundary/ErrorBoundary.tsx
-interface ErrorBoundaryState {
-  hasError: boolean
-  error?: Error
-}
+Error boundaries provide graceful error handling throughout the application:
 
-export class ErrorBoundary extends Component<
-  PropsWithChildren,
-  ErrorBoundaryState
-> {
-  constructor(props: PropsWithChildren) {
-    super(props)
-    this.state = { hasError: false }
-  }
-
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-    return { hasError: true, error }
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className={styles.errorBoundary}>
-          <h2>Algo deu errado</h2>
-          <p>Ocorreu um erro inesperado. Tente recarregar a página.</p>
-        </div>
-      )
-    }
-
-    return this.props.children
-  }
-}
-```
+- Catches JavaScript errors anywhere in the child component tree
+- Displays user-friendly error messages in Portuguese
+- Provides recovery options (retry/reload)
+- Shows detailed error information in development mode
+- Automatically wraps the entire app in `main.tsx`
 
 ## Performance Considerations
 
