@@ -161,6 +161,14 @@ superfolio/
 
 ## Development Guidelines
 
+### Localization Standards
+
+- **Target Audience**: Brazilian customers
+- **User-facing content**: ALL text, labels, buttons, messages, alt texts, etc. MUST be in Brazilian Portuguese (pt-BR)
+- **Code**: Variable names, function names, comments, and documentation MUST remain in English
+- **Date/Time formats**: Use Brazilian format (DD/MM/YYYY, 24h)
+- **Number formats**: Use Brazilian decimal separator (comma) and thousands separator (dot)
+
 ### TypeScript Standards
 
 - Strict mode enabled
@@ -275,6 +283,7 @@ Before completing any task, ensure:
 
 - [ ] **Standards**: Follows coding standards from `docs/coding-standards.md`
 - [ ] **Patterns**: Uses established patterns from relevant documentation
+- [ ] **Localization**: All user-facing text is in Brazilian Portuguese (pt-BR)
 - [ ] **Accessibility**: Meets WCAG AA standards
 - [ ] **Responsiveness**: Works on mobile, tablet, and desktop
 - [ ] **Testing**: Includes appropriate tests
