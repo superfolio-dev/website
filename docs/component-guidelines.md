@@ -1,6 +1,6 @@
 # SuperFolio - Component Guidelines
 
-## í·§í·· Localization Requirements
+## Brazilian Portuguese Localization Requirements
 
 All user-facing content MUST be in Brazilian Portuguese (pt-BR):
 - Button text, labels, placeholders, validation messages
