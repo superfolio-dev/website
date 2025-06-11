@@ -101,28 +101,38 @@ Before starting any task, identify the category and refer to the appropriate doc
 
 ## System Architecture
 
+⚠️ **Full architecture details in** `docs/architecture.md`
+
 ### Current Structure
 
 ```
 superfolio/
 ├── src/
-│   ├── components/          # Reusable components
-│   ├── pages/               # Application pages
-│   ├── templates/           # Portfolio templates
-│   ├── hooks/               # Custom hooks
-│   ├── stores/              # Zustand stores
-│   ├── contexts/            # React contexts
-│   ├── utils/               # Utility functions
-│   ├── types/               # TypeScript definitions
-│   ├── services/            # API services
-│   ├── assets/              # Static resources
-│   └── styles/              # Global styles
-├── docs/                    # Documentation
-├── public/                  # Public files
-└── dist/                    # Production build
+│   ├── components/          # All components organized by type
+│   │   ├── pages/          # Page components (TemplateSelection, etc.)
+│   │   ├── templates/      # Portfolio templates (ModernDeveloper, etc.)
+│   │   └── shared/         # Shared UI components (Button, etc.)
+│   ├── hooks/, stores/, contexts/, utils/, types/, services/
+│   ├── assets/, styles/     # Static resources and global styles
+├── docs/                    # 📚 Complete documentation
+├── public/, dist/           # Static and build files
+```
+
+### Component Organization
+
+Each component has its own folder with dedicated `index.ts` export:
+
+```
+src/components/ComponentName/
+├── ComponentName.tsx        # Main component
+├── ComponentName.module.css # Styles
+├── ComponentName.test.tsx   # Tests
+└── index.ts                 # Export file
 ```
 
 ### Main Flow
+
+**Detailed architecture in** `docs/architecture.md`
 
 1. **Template Selection**: User chooses a template
 2. **Data Form**: Fill in personal/professional information
@@ -132,74 +142,36 @@ superfolio/
 
 ## Core Features
 
+**Complete feature documentation in** `docs/ai-task-templates.md`
+
 ### 1. Template System
 
-- Responsive and modern templates
-- Categories: Developer, Designer, Freelancer, Business
-- Customization of colors, typography and layout
-- Support for different sections (about, projects, contact, etc.)
+- Responsive templates with categories (Developer, Designer, Freelancer, Business)
+- Customization options and support for different sections
 
 ### 2. Data Editor
 
-- Structured form for information collection
-- Image upload (profile photo, projects)
-- Social media integration
-- Real-time data validation
+- Structured forms, image upload, social media integration
+- Real-time validation
 
 ### 3. Real-time Preview
 
-- Instant visualization of changes
-- Responsiveness on different devices
-- Dark/light mode
+- Instant visualization, responsiveness testing, dark/light mode
 
 ### 4. Static Site Generation
 
-- Export to optimized HTML/CSS/JS
-- SEO optimized
-- Performance optimized
-- PWA ready
+- SEO optimized, performance optimized, PWA ready
 
 ## Development Guidelines
 
-### Localization Standards
+⚠️ **CRITICAL**: All development standards are defined in documentation files:
 
-- **Target Audience**: Brazilian customers
-- **User-facing content**: ALL text, labels, buttons, messages, alt texts, etc. MUST be in Brazilian Portuguese (pt-BR)
-- **Code**: Variable names, function names, comments, and documentation MUST remain in English
-- **Date/Time formats**: Use Brazilian format (DD/MM/YYYY, 24h)
-- **Number formats**: Use Brazilian decimal separator (comma) and thousands separator (dot)
-
-### TypeScript Standards
-
-- Strict mode enabled
-- Interfaces for all props
-- Explicit types where necessary
-- Avoid `any`, use `unknown` when appropriate
-- No semicolons (enforced by ESLint)
-- Type-only imports: `import type { Type } from 'module'`
-
-### React Patterns
-
-- Functional components with hooks
-- Arrow function components (no React.FC)
-- Custom hooks for reusable logic
-- Proper memoization (React.memo, useMemo, useCallback)
-- Error boundaries for error handling
-
-### CSS Standards
-
-- CSS Modules for component styling
-- Design system CSS variables
-- Mobile-first responsive design
-- Dark theme as default
-- No external CSS frameworks
-
-### State Management
-
-- **Zustand**: Global application state
-- **React Context**: Component tree state
-- **Local State**: Component-specific state
-- Persist important state with localStorage
+- **Localization**: See `docs/coding-standards.md` (Brazilian Portuguese for UI, English for code)
+- **TypeScript**: See `docs/coding-standards.md` (strict mode, interfaces, no semicolons)
+- **React Patterns**: See `docs/coding-standards.md` (hooks, components, memoization)
+- **CSS Standards**: See `docs/design-system.md` (CSS modules, variables, mobile-first)
+- **State Management**: See `docs/architecture.md` (Zustand, Context, local state)
+- **Testing**: See `docs/testing-guidelines.md` (Vitest, Playwright, coverage)
 
 ## AI Agent Instructions
 
@@ -279,6 +251,8 @@ superfolio/
 
 ## Quality Checklist
 
+**Complete checklist in** `docs/ai-task-templates.md`
+
 Before completing any task, ensure:
 
 - [ ] **Standards**: Follows coding standards from `docs/coding-standards.md`
@@ -305,6 +279,8 @@ Before completing any task, ensure:
   ```
 
 ## Data Structure
+
+**Complete interfaces in** `src/types/` and `docs/architecture.md`
 
 ### UserProfile
 
@@ -371,5 +347,3 @@ npm run test      # Tests
 ```
 
 ---
-
-_Updated: Complete documentation system with concise AI response guidelines_
