@@ -1,0 +1,15 @@
+/* Layout Component Styles */
+.layout {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  color: var(--color-primary-contrast);
+  font-family: var(--font-family-primary);
+}
+
+.content {
+  min-height: calc(100vh - 70px); /* Navigation height */
+}

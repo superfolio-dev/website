@@ -4,27 +4,41 @@
 
 ```
 src/
-├── components/          # Shared components
-│   ├── Button/
+├── components/          # All components organized by type
+│   ├── Button/         # Shared UI components
 │   │   ├── Button.tsx
 │   │   ├── Button.module.css
 │   │   ├── Button.test.tsx
-│   │   └── index.ts
-│   └── index.ts        # Barrel export
-├── pages/              # Application pages
-│   ├── TemplateSelection/
-│   │   ├── TemplateSelection.tsx
-│   │   ├── TemplateSelection.module.css
-│   │   ├── components/  # Page-specific components
-│   │   └── index.ts
-│   └── index.ts
+│   │   └── index.ts    # Component export
+│   ├── pages/          # Page components
+│   │   ├── TemplateSelection/
+│   │   │   ├── TemplateSelection.tsx
+│   │   │   ├── TemplateSelection.module.css
+│   │   │   ├── TemplateSelection.test.tsx
+│   │   │   └── index.ts
+│   └── templates/      # Portfolio templates
+│       ├── ModernDeveloper/
+│       │   ├── ModernDeveloper.tsx
+│       │   ├── ModernDeveloper.module.css
+│       │   ├── ModernDeveloper.test.tsx
+│       │   └── index.ts
 ├── hooks/              # Custom hooks
 ├── stores/             # Zustand stores
 ├── contexts/           # React contexts
 ├── utils/              # Utility functions
 ├── types/              # TypeScript definitions
-├── templates/          # Portfolio templates
 └── styles/            # Global styles
+```
+
+### Component Import Pattern
+
+Each component folder has its own `index.ts` for clean imports:
+
+```typescript
+// Import from component folders
+import { TemplateSelection } from '@/components/pages/TemplateSelection'
+import { ModernDeveloper } from '@/components/templates/ModernDeveloper'
+import { Button } from '@/components/Button'
 ```
 
 ## State Management
