@@ -1,0 +1,114 @@
+/* Navigation Component Styles */
+.navigation {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoText {
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  background: linear-gradient(45deg, #fff, #e0e7ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover .logoText {
+  transform: scale(1.05);
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.navLink {
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navLink.active {
+  background: rgba(59, 130, 246, 0.3);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: #fbbf24;
+  border-radius: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .logoText {
+    font-size: 1.5rem;
+  }
+
+  .navLinks {
+    gap: var(--spacing-md);
+  }
+
+  .navLink {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    height: 60px;
+  }
+
+  .logoText {
+    font-size: 1.3rem;
+  }
+
+  .navLinks {
+    gap: var(--spacing-sm);
+  }
+}

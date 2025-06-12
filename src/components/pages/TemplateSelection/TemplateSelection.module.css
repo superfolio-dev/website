@@ -1,7 +1,5 @@
 .page {
-  background: var(--color-background);
-  color: var(--color-text);
-  min-height: 100vh;
+  min-height: calc(100vh - 70px); /* Subtract navigation height */
   padding: var(--spacing-xl) 0;
 }
 
